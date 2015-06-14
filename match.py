@@ -5,12 +5,12 @@ male2 = []
 for i in range(5):
     list = []
     for j in range(5):
-        print "男性No",i+1,"が",j+1,"番目に好きな女性は"
+        print "男性No", i+1, "が", j+1, "番目に好きな女性は"
         pref = input()
         list.append(int(pref))
     male.update({i+1: list})
     male2 = male.items()
-    print "男性No", i+1,"の選好入力終わり"
+    print "男性No", i+1, "の選好入力終わり"
 mpref = []
 for i in range(len(male2)):
     mpref.append(male2[i][1])
@@ -21,12 +21,12 @@ female2 = []
 for i in range(5):
     list = []
     for j in range(5):
-        print "女性No",i+1,"が",j+1,"番目に好きな男性は"
+        print "女性No", i+1, "が", j+1, "番目に好きな男性は"
         pref = input()
         list.append(int(pref))
     female.update({i+1: list})
     female2 = female.items()
-    print "No", i+1,"の選好入力終わり"
+    print "No", i+1, "の選好入力終わり"
 fpref = []
 for i in range(len(female2)):
     fpref.append(female2[i][1])
@@ -76,9 +76,9 @@ while len(single) > 0:
 
 for i in have:
     if i != 0:
-        married.update({i:have.index(i)+1})
+        married.update({i: have.index(i)+1})
     else:
-        married.update({0:have.index(i)+1})
+        married.update({0: have.index(i)+1})
 
 married = married.items()
 for (i, j) in married:
