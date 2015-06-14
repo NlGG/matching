@@ -1,1 +1,1 @@
-完成版はmatch.ipnbです。
+完成版はmatch.ipynbです。
