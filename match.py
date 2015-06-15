@@ -57,7 +57,7 @@ while len(single) > 0:
                 have[mbest] = i + 1
             else:
                 if down <= len(mpref):
-                    if fpref[mbest].index(i+1) > fpref[mbest].index(have[mbest]):
+                    if fpref[mbest].index(i) > fpref[mbest].index(have[mbest]):
                         single.remove(i)
                         single.append(have[mbest]-1)
                         have[mbest] = i + 1
