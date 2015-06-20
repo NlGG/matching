@@ -21,19 +21,25 @@ def deferred_acceptance(m_prefs, f_prefs):
 
         for i in single:
 
+
             mbest = m_prefs[i][down[i]]
 
-            if f_prefs[mbest].index(i) < f_prefs[mbest].index(have[mbest]):
-                single.remove(i)
-                if have[mbest] != -1:
-                    single.append(have[mbest])
-                have[mbest] = i
-            else:
-                if down[i] < mnum - 1:
-                    down[i] += 1
-                else:
+            if mbest != -1:
+
+                if f_prefs[mbest].index(i) < f_prefs[mbest].index(have[mbest]):
                     single.remove(i)
-                    married.update({i: -1})
+                    if have[mbest] != -1:
+                        single.append(have[mbest])
+                    have[mbest] = i
+                else:
+                    if down[i] < mnum - 1:
+                        down[i] += 1
+                    else:
+                        single.remove(i)
+                        married.update({i: -1})
+            else:
+                single.remove(i)
+                married.update({i: -1})
 
     for i in have:
         if i != -1:
