@@ -21,7 +21,6 @@ def deferred_acceptance(m_prefs, f_prefs):
 
         for i in single:
 
-
             mbest = m_prefs[i][down[i]]
 
             if mbest != -1:
