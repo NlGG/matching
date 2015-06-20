@@ -31,7 +31,7 @@ def deferred_acceptance(m_prefs, f_prefs):
                         single.append(have[mbest])
                     have[mbest] = i
                 else:
-                    if down[i] < mnum - 1:
+                    if down[i] < fnum - 1:
                         down[i] += 1
                     else:
                         single.remove(i)
