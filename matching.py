@@ -3,19 +3,10 @@
 def deferred_acceptance(m_prefs, f_prefs):
     mnum = len(m_prefs)
     fnum = len(f_prefs)
-    single = []
+    single = [i for i in range(mnum)]
     married = {}
-    have = []
-    down = []
-
-    for i in range(mnum):
-        down.append(0)
-
-    for i in range(fnum):
-        have.append(mnum)
-
-    for i in range(mnum):
-        single.append(i)
+    have = [mnum for i in range(fnum)]
+    down = [0 for i in range(mnum)]
 
     while len(single) > 0:
 
@@ -25,7 +16,8 @@ def deferred_acceptance(m_prefs, f_prefs):
 
             if mbest != fnum:
 
-                if f_prefs[mbest].index(i) < f_prefs[mbest].index(have[mbest]):
+                if  np.where(f_prefs[mbest] == i)[0][0] < \
+                      np.where(f_prefs[mbest] == have[mbest])[0][0]:
                     single.remove(i)
                     if have[mbest] != mnum:
                         single.append(have[mbest])
@@ -50,5 +42,5 @@ def deferred_acceptance(m_prefs, f_prefs):
     for i in range(mnum):
         m_matched_computed.append(married[i][1])
     f_matched_computed = have
-    
+
     return m_matched_computed, f_matched_computed
