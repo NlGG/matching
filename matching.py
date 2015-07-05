@@ -77,10 +77,6 @@ def deferred_acceptance(p_prefs, r_prefs, caps=None):
                 else: # 大学側に「こんなやついらない」と思われてた場合
                     down[i] += 1
 
-    # resp_unmatchedを名前順に直す
-    for i in range(rnum):
-        resp_matched[indptr[i]:indptr[i+1]].sort()
-
     if orcaps == None:
         return prop_matched, resp_matched
 
